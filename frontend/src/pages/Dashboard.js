@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { taskAPI } from "../utils/api";
 import { useAuth } from "../context/AuthContext";
 import "../styles/Dashboard.css";
@@ -18,11 +18,7 @@ export const Dashboard = () => {
   });
   const [editingId, setEditingId] = useState(null);
 
-  useEffect(() => {
-    fetchTasks();
-  }, []);
-
-  const fetchTasks = async () => {
+  const fetchTasks = useCallback(async () => {
     try {
       setLoading(true);
       const response = await taskAPI.getTasksByUser(user.id);
@@ -34,7 +30,11 @@ export const Dashboard = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user.id]);
+
+  useEffect(() => {
+    fetchTasks();
+  }, [fetchTasks]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

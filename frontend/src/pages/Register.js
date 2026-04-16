@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { authAPI } from "../utils/api";
-import { useAuth } from "../context/AuthContext";
 import "../styles/Auth.css";
 
 export const Register = () => {
@@ -13,7 +12,6 @@ export const Register = () => {
   });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -30,7 +28,7 @@ export const Register = () => {
     setLoading(true);
 
     try {
-      const response = await authAPI.register(formData);
+      await authAPI.register(formData);
       alert("Registration successful! Please login.");
       navigate("/login");
     } catch (err) {
