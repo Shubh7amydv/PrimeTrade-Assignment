@@ -71,7 +71,18 @@ Install dependencies:
 npm install
 ```
 
-### 5. Run the Server
+### 3. Default Admin Credentials
+
+The backend bootstraps an admin user from the environment variables below:
+
+```env
+ADMIN_EMAIL=admin@primetrade.com
+ADMIN_PASSWORD=admin123
+```
+
+If the admin user already exists, the server will reuse it and ensure the role is set to `admin`.
+
+### 4. Run the Server
 
 Development mode (with nodemon):
 ```bash
