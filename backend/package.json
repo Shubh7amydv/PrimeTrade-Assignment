@@ -1,0 +1,33 @@
+{
+  "name": "primetrade-backend",
+  "version": "1.0.0",
+  "description": "Scalable REST API with Authentication & Role-Based Access",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "API",
+    "Authentication",
+    "JWT",
+    "Role-Based",
+    "Scalable"
+  ],
+  "author": "Shubham",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.5",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-async-errors": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
