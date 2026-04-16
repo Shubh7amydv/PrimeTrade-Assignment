@@ -71,21 +71,6 @@ Install dependencies:
 npm install
 ```
 
-### 3. Environment Setup
-
-Create a `.env` file in the root directory:
-```env
-PORT=3000
-MONGO_URI=mongodb://127.0.0.1:27017/task_helper_db
-JWT_SECRET=your_jwt_secret_key_change_in_production
-JWT_EXPIRES_IN=7d
-NODE_ENV=development
-ADMIN_EMAIL=admin@taskhelper.com
-ADMIN_PASSWORD=admin123
-ADMIN_FIRST_NAME=Admin
-ADMIN_LAST_NAME=User
-```
-
 ### 5. Run the Server
 
 Development mode (with nodemon):
@@ -142,72 +127,7 @@ The server will start at `http://localhost:3000`
 - Helmet for security headers
 - Body size limits
 
-## 📋 Request/Response Format
 
-### Success Response
-```json
-{
-  "data": {},
-  "success": true,
-  "message": "Operation successful",
-  "err": {}
-}
-```
-
-### Error Response
-```json
-{
-  "data": {},
-  "success": false,
-  "message": "Error message",
-  "err": "Error details"
-}
-```
-
-## 🔌 Example Usage
-
-### 1. Register User
-```bash
-POST /api/v1/auth/register
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "password123",
-  "firstName": "John",
-  "lastName": "Doe"
-}
-```
-
-### 2. Login User
-```bash
-POST /api/v1/auth/login
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-
-Response:
-```json
-{
-  "data": {
-    "token": "eyJhbGciOiJIUzI1NiIs...",
-    "user": {
-      "id": 1,
-      "email": "user@example.com",
-      "firstName": "John",
-      "lastName": "Doe",
-      "role": "user"
-    }
-  },
-  "success": true,
-  "message": "User logged in successfully",
-  "err": {}
-}
-```
 
 ### 3. Create Task
 ```bash
@@ -274,35 +194,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
 3. **Error Handling**: Global error handling middleware
 4. **Reusable Components**: Base CRUD repository for code reuse
 
-### Future Optimization
-1. **Caching Layer**: Implement Redis for session and frequently accessed data
-2. **Rate Limiting**: Add rate limiter middleware to prevent abuse
-3. **Logging**: Implement Winston or Bunyan for structured logging
-4. **Monitoring**: Add APM tools like New Relic for performance monitoring
-5. **Database Index**: Create indexes on frequently queried columns
-6. **API Gateway**: Implement Kong or AWS API Gateway for routing and throttling
-7. **Microservices**: Split into smaller services (Auth Service, Task Service)
-8. **Message Queue**: Implement RabbitMQ for async operations
-9. **Docker**: Containerize application for easy deployment
-10. **Load Balancing**: Use Nginx or AWS ALB for distributing traffic
-
-## 📝 API Documentation
-
-A Postman collection is provided: `Postman_Collection.json`
-
-Import into Postman:
-1. Open Postman
-2. Click "Import"
-3. Select the `Postman_Collection.json` file
-4. Replace `YOUR_JWT_TOKEN` with actual token from login response
-
-## ⚠️ Important Notes
-
-1. **JWT Secret**: Change `JWT_SECRET` in production
-2. **Database Password**: Do not commit `.env` file with actual credentials
-3. **CORS**: Configure CORS origin based on frontend URL
-4. **Rate Limiting**: Implement rate limiting for production
-5. **Input Validation**: Add request validation middleware for production
 
 ## 🐛 Error Codes
 
@@ -315,10 +206,3 @@ Import into Postman:
 | 404 | Not Found |
 | 500 | Internal Server Error |
 
-## 📞 Support
-
-For issues or questions, please create an issue in the repository.
-
-## 📄 License
-
-ISC

@@ -2,6 +2,10 @@
 
 A complete full-stack application demonstrating best practices for building scalable, secure REST APIs with role-based access control, combined with a beautiful React frontend.
 
+## 🌐 Live Demo
+
+**Frontend:** https://prime-trade-assignment-omega.vercel.app/
+
 ## 📊 Project Overview
 
 This project implements a production-ready backend API with:
@@ -136,58 +140,6 @@ Response includes JWT token:
 ### tasks Collection
 - `_id`, `title`, `description`, `status`, `priority`, `dueDate`, `userId`, `createdAt`, `updatedAt`
 
-## 🔒 Security Features
-
-### Backend
-- ✅ JWT token-based authentication
-- ✅ Password hashing with bcrypt (10 salt rounds)
-- ✅ Role-based access control middleware
-- ✅ Input validation and sanitization
-- ✅ Query safety with Mongoose schema validation
-- ✅ CORS configuration
-- ✅ Helmet security headers
-- ✅ Protected routes with auth middleware
-
-### Frontend
-- ✅ Secure token storage in localStorage
-- ✅ Token automatically added to API requests
-- ✅ Protected routes for authenticated content
-- ✅ Automatic logout on unauthorized responses
-- ✅ Input validation on forms
-
-## 🏭 Architecture
-
-### Backend Architecture (MVC + Repository Pattern)
-```
-Request → Route → Controller → Service → Repository → Database
-```
-
-### Layers
-1. **Controllers**: Handle HTTP requests/responses
-2. **Services**: Business logic and validation
-3. **Repositories**: Database operations (Mongoose)
-4. **Models**: Data structure definitions
-
-### Middleware
-- Authentication (JWT verification)
-- Authorization (Role-based access)
-- Error Handling (Centralized)
-- CORS (Cross-origin requests)
-- Helmet (Security headers)
-
-## 📊 Frontend Architecture
-
-### State Management
-- Context API for authentication
-- Local state for UI components
-- localStorage for token persistence
-
-### Components
-- Protected Routes
-- Navigation Bar
-- Authentication Pages (Login, Register)
-- Dashboard with Task Management
-- Home/Landing Page
 
 ## 🚀 Deployment & Scalability
 
@@ -197,29 +149,6 @@ Request → Route → Controller → Service → Repository → Database
 - **Frontend**: React 18
 - **Authentication**: JWT
 
-
-
-
-
-
-## 📝 API Documentation
-
-### Using Postman Collection
-
-1. Import `backend/Postman_Collection.json` into Postman
-2. Set environment variables:
-   - `base_url`: http://localhost:3000/api/v1
-   - `token`: JWT token from login response
-3. Test all endpoints
-
-### Swagger/OpenAPI
-
-Swagger documentation is included in route comments. To view:
-1. Install swagger dependencies
-2. Configure swagger in server
-3. Access at `/api-docs`
-
-## 🛠️ Technology Stack
 
 ### Backend
 - **Runtime**: Node.js
@@ -262,69 +191,5 @@ Swagger documentation is included in route comments. To view:
 - Delete tasks
 - View user-specific tasks
 - View all tasks (Admin only)
-
-### Security
-- Password hashing with bcrypt
-- JWT token-based authentication
-- Role-based access control
-- Protected API endpoints
-- Secure session management
-
-### UI/UX
-- Responsive design (mobile, tablet, desktop)
-- Intuitive navigation
-- Form validation and error messages
-- Success/failure notifications
-- Clean, modern interface
-- Smooth transitions and animations
-
-## 🧪 Testing
-
-### Manual Testing
-1. Register a new user
-2. Login and verify token
-3. Create a task
-4. Update task status
-5. Delete a task
-6. Test unauthorized access
-7. Test admin-only endpoints
-
-### Postman Testing
-- Import provided collection
-- Run request sequence
-- Verify response status codes
-- Check response data format
-
-## 🔍 Debugging
-
-### Backend
-```bash
-# Enable debug logging
-DEBUG=* npm run dev
-
-# Check database connection
-mongosh "$MONGO_URI"
-
-# View logs
-tail -f app.log
-```
-
-### Frontend
-```bash
-# Browser DevTools
-- Network tab for API calls
-- Application tab for localStorage
-- Console for errors
-- React DevTools extension
-```
-
-## 📖 Documentation Files
-
-- `backend/README.md` - Backend setup and API guide
-- `frontend/README.md` - Frontend setup and component guide
-- `backend/Postman_Collection.json` - API endpoints for testing
-- Root `README.md` - This file
-
-
 
 # PrimeTrade-Assignment
